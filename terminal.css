@@ -1,0 +1,55 @@
+.terminal{background:#000;border-color:#414141;font-size:13px;line-height:1.8}.terminal-bar{background:#191919;color:#aaa}.terminal #output{min-height:320px;max-height:480px;color:#ddd}.terminal .welcome{color:#a8a8a8}.terminal .success,.shell-prompt,#prompt{color:#72e897}.terminal .error{color:#ff7979}.staff-message{color:#8fbfff;border-left:2px solid #466f9e;background:#0c121c;padding:9px 13px;margin:14px 0;white-space:pre-wrap;font:12px/1.7 'DM Sans',sans-serif}.command-editor{position:relative;flex:1;min-width:0;height:1.8em}.command-editor input,#command-highlight{position:absolute;inset:0;padding:0;margin:0;border:0;font:inherit;line-height:inherit;letter-spacing:normal;white-space:pre;overflow:hidden;width:100%;height:100%;border-radius:0}.command-editor input{color:transparent;caret-color:#fff;background:transparent;z-index:1;-webkit-text-fill-color:transparent}.command-editor input::selection{background:#769bc25c}.command-editor input:focus-visible{outline:none}#command-form:focus-within{box-shadow:inset 2px 0 #72e897}#command-highlight{pointer-events:none;color:#ddd}.syntax-command{color:#72e897}.syntax-unknown{color:#ff7979;text-decoration:underline dotted}.syntax-string{color:#f4d47c}.syntax-operator{color:#eb9eff}.syntax-option{color:#79cddd}.syntax-path{color:#83adff}.syntax-argument{color:#ddd}.hint-row{align-items:flex-start;flex-direction:column}.hint-row #hint-text{font:13px/1.7 'DM Sans',sans-serif;color:#c8bddf;max-width:65ch}.hint-row button:disabled{cursor:default;color:#8d8599;border-color:#332d43;opacity:.75}@media(forced-colors:active){.command-editor input{color:CanvasText;-webkit-text-fill-color:CanvasText}#command-highlight{display:none}}@media(max-width:800px){.terminal{font-size:12px}.terminal #output{padding:16px;min-height:260px}#command-form{padding:10px 16px 22px}}
+.concept-box{border-left:2px solid #b8a4ff;background:#b8a4ff09;padding:12px 16px;margin:18px 0}.concept-box strong{font-size:9px;letter-spacing:1.5px;color:#b8a4ff}.concept-box p{color:#c6bfd1;font-size:13px;line-height:1.8;margin:6px 0 0}#missions{max-height:620px;overflow:auto;scrollbar-width:thin}#missions button:disabled{opacity:.45;cursor:default;border-color:transparent;color:#aaa}#missions button .number{flex-shrink:0}.course-head{gap:8px}.course-head strong{white-space:nowrap}
+.intro::after{content:none}
+.play-area{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:18px;align-items:start}.shell-area{min-width:0}.team-chat{background:#1a1821;border:1px solid #393044;border-radius:10px;overflow:hidden}.chat-heading{display:flex;align-items:center;gap:10px;padding:16px;border-bottom:1px solid #393044}.chat-heading h3{font-size:14px;margin:0}.chat-heading p{font-size:10px;color:#aaa0b7;margin:5px 0 0}.chat-status{width:8px;height:8px;background:#72e897;border-radius:50%;flex-shrink:0}#team-messages{height:330px;overflow-y:auto;padding:14px;scrollbar-width:thin;overflow-wrap:anywhere}.chat-message{background:#24202e;border:1px solid #342d40;border-radius:8px;padding:12px;margin-bottom:12px}.chat-message strong{font-size:11px}.chat-laura{color:#cbb6ff}.chat-noah{color:#8fbfff}.chat-message p{font-size:12px;color:#e1dbe9;line-height:1.75;margin:7px 0 0;white-space:pre-wrap}.chat-help{border-top:1px solid #393044;padding:14px}.chat-help button{font-size:11px;width:100%;color:#cbb6ff}.chat-help button:disabled{opacity:.55;cursor:default}.chat-help #hint-text{display:block;color:#b8acc8;font:11px/1.7 'DM Sans',sans-serif;margin-top:10px}.chat-help #hint-text:empty{display:none}.terminal .terminal-bar{gap:8px}.terminal .live{white-space:nowrap}@media(max-width:1150px){.play-area{grid-template-columns:minmax(0,1fr)}#team-messages{height:250px}}@media(min-width:1500px){main{max-width:1500px}.play-area{grid-template-columns:minmax(0,1fr) 300px}}
+main{padding-top:0}.intro>p{margin-top:0;padding-top:8px;margin-bottom:16px}
+/* Sur écran de bureau, les historiques défilent dans leur panneau. */
+@media(min-width:1100px) and (min-height:600px){
+ header{height:60px}
+ main{height:calc(100dvh - 60px);padding:0 28px 12px;display:flex;flex-direction:column}
+ .intro{flex-shrink:0}.intro>p{font-size:13px;margin-bottom:12px}
+ .layout{flex:1;min-height:0;gap:20px;grid-template-columns:240px minmax(0,1fr)}
+ .layout>aside{height:100%;min-height:0;display:flex;flex-direction:column;padding:16px}
+ #missions{flex:1;min-height:0;max-height:none}.progress{flex-shrink:0;margin:12px 0}
+ .workspace{min-width:0;min-height:0;display:grid;grid-template-rows:auto minmax(180px,1fr) auto;gap:12px}
+ .brief{padding:14px 20px;margin:0}.brief h2{font-size:20px;margin:7px 0}.brief>p{margin:7px 0;font-size:13px;line-height:1.6}
+ .concept-box{padding:8px 12px;margin:10px 0 0}.concept-box p{font-size:12px;line-height:1.6;margin:4px 0 0}
+ .play-area{grid-template-columns:minmax(0,1fr) 260px;min-height:0;align-items:stretch;gap:14px}
+ .shell-area{min-height:0;display:flex;flex-direction:column}.terminal{display:flex;flex-direction:column;flex:1;min-height:0}
+ .terminal #output{min-height:0;max-height:none;flex:1;padding:12px 16px 0}
+ .terminal-bar{flex-shrink:0}#command-form{flex-shrink:0;padding:8px 16px 14px}.terminal-footer{flex-shrink:0;padding:8px 0;font-size:8px;gap:8px}
+ .team-chat{min-height:0;display:flex;flex-direction:column}.chat-heading{padding:12px;flex-shrink:0}
+ #team-messages{height:auto;min-height:0;flex:1;padding:10px}.chat-help{padding:10px;flex-shrink:0;max-height:45%;overflow-y:auto}
+ .reference{margin:0;padding-top:10px}.reference h3{font-size:15px;margin:0}.reference>p{font-size:11px;margin:5px 0}
+ #commands{margin-top:8px;gap:6px}#commands button{padding:6px 10px}
+}
+/* Thèmes de toute l’interface, terminal compris. */
+.header-actions{margin-left:auto;display:flex;align-items:center;gap:10px}.header-actions button{margin-left:0}
+:root[data-theme="light"]{color-scheme:light;--bg:#f5f3fa;--panel:#fff;--line:#d4cde0;--muted:#625a70;--green:#60409c}
+[data-theme="light"] body{color:#292333}[data-theme="light"] .brand{color:#292333}
+[data-theme="light"] nav button.active{background:#ebe3f8;border-color:#9b7dbb}
+[data-theme="light"] .progress{background:#ded6e9}
+[data-theme="light"] .brief>p,[data-theme="light"] .concept-box p{color:#51475f}
+[data-theme="light"] .concept-box{background:#f4effb;border-color:#7954b0}
+[data-theme="light"] .concept-box strong{color:#60409c}
+[data-theme="light"] #commands button{background:#eee8f6;color:#514163}
+[data-theme="light"] dialog{color:#292333}[data-theme="light"] dialog pre{color:#51475f}
+[data-theme="light"] .terminal{background:#fff;border-color:#b5a9c7}
+[data-theme="light"] .terminal-bar{background:#ebe6f1;color:#60566b}
+[data-theme="light"] .terminal #output,[data-theme="light"] #command-highlight,[data-theme="light"] .syntax-argument{color:#292333}
+[data-theme="light"] .terminal .welcome,[data-theme="light"] .terminal-footer{color:#625a70}
+[data-theme="light"] .terminal .success,[data-theme="light"] .shell-prompt,[data-theme="light"] #prompt,[data-theme="light"] .syntax-command{color:#14663a}
+[data-theme="light"] .terminal .error,[data-theme="light"] .syntax-unknown{color:#b52636}
+[data-theme="light"] .syntax-string{color:#805300}[data-theme="light"] .syntax-operator{color:#83349a}
+[data-theme="light"] .syntax-option{color:#006778}[data-theme="light"] .syntax-path{color:#2458a6}
+[data-theme="light"] .command-editor input{caret-color:#292333}
+[data-theme="light"] #command-form:focus-within{box-shadow:inset 2px 0 #14663a}
+[data-theme="light"] .team-chat{background:#fff;border-color:var(--line)}
+[data-theme="light"] .chat-heading,[data-theme="light"] .chat-help{border-color:var(--line)}
+[data-theme="light"] .chat-message{background:#f4f0f9;border-color:#ded5e9}
+[data-theme="light"] .chat-message p{color:#393044}
+[data-theme="light"] .chat-laura,[data-theme="light"] .chat-help button{color:#60409c}
+[data-theme="light"] .chat-noah{color:#2458a6}
+[data-theme="light"] .chat-heading p,[data-theme="light"] .chat-help #hint-text,[data-theme="light"] #missions button:disabled{color:#625a70}
+@media(max-width:500px){header{gap:8px}.brand{font-size:16px}header button{padding:8px;font-size:10px}}
+#theme-toggle{width:36px;height:36px;padding:0;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-size:23px;line-height:1}
