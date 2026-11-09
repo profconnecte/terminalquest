@@ -1,0 +1,37 @@
+Défi	Commande
+1 · Se repérer	pwd
+2 · Explorer le serveur	ls
+3 · Lire le mode d’emploi	man ls
+4 · Un chemin relatif	cd tournoi/
+5 · Les fichiers cachés	ls -a
+6 · Lire le message secret	cat .staff.txt
+7 · Identifier le propriétaire	ls -l briefing.txt
+8 · Combiner des options	ls -la
+9 · Un briefing numéroté	cat -n briefing.txt
+10 · Revenir au parent	cd ..
+11 · Depuis la racine	cd /home/etudiant/tournoi/
+12 · Installer la régie	mkdir finale
+13 · Créer une arborescence	mkdir -p finale/assets/images
+14 · Deux fichiers à préparer	touch finale/annonce.txt finale/journal.txt
+15 · Une annonce à l’écran	echo "Finale a 20h"
+16 · Enregistrer l’annonce	echo "Finale a 20h" > finale/annonce.txt
+17 · Ajouter sans effacer	echo "Aurora vs Pulse" >> finale/annonce.txt
+18 · Actualiser sans effacer	touch finale/annonce.txt
+19 · Contrôler la livraison	cat finale/annonce.txt finale/journal.txt
+20 · Au cœur de la régie	cd finale/
+21 · Copier ici	cp ../equipes.txt .
+22 · Copier vers le parent	cp journal.txt ..
+23 · Copier vers un autre dossier	cp annonce.txt assets/
+24 · Copier par chemins absolus	cp /home/etudiant/tournoi/briefing.txt /home/etudiant/tournoi/finale/briefing-regie.txt
+25 · Sauvegarder un dossier	cp -r assets/ backup
+26 · Renommer le lineup	mv equipes.txt lineup.txt
+27 · Déplacer vers le parent	mv briefing-regie.txt ..
+28 · Récupérer ici	mv ../briefing-regie.txt .
+29 · Changer de dossier et de nom	mv briefing-regie.txt assets/briefing.txt
+30 · Déplacer par chemins absolus	mv /home/etudiant/tournoi/journal.txt /home/etudiant/tournoi/finale/assets/journal-archive.txt
+31 · Écrire sans saut de ligne	echo -n DIRECT > journal.txt
+32 · Ne pas créer par accident	touch -c absent.txt
+33 · Retirer le brouillon	rm ../brouillon.txt
+34 · Supprimer un dossier vide	rm -d assets/images/
+35 · Nettoyer une sauvegarde	rm -r backup/
+36 · Dernier contrôle	ls -la /home/etudiant/tournoi/finale/
