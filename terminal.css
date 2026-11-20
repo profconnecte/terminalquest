@@ -21,7 +21,7 @@ main{padding-top:0}.intro>p{margin-top:0;padding-top:8px;margin-bottom:16px}
  .team-chat{min-height:0;display:flex;flex-direction:column}.chat-heading{padding:12px;flex-shrink:0}
  #team-messages{height:auto;min-height:0;flex:1;padding:10px}.chat-help{padding:10px;flex-shrink:0;max-height:45%;overflow-y:auto}
  .reference{margin:0;padding-top:10px}.reference h3{font-size:15px;margin:0}.reference>p{font-size:11px;margin:5px 0}
- #commands{margin-top:8px;gap:6px}#commands button{padding:6px 10px}
+ .command-list{margin-top:8px;gap:6px}.command-list button{padding:6px 10px}
 }
 /* Thèmes de toute l’interface, terminal compris. */
 .header-actions{margin-left:auto;display:flex;align-items:center;gap:10px}.header-actions button{margin-left:0}
@@ -32,7 +32,7 @@ main{padding-top:0}.intro>p{margin-top:0;padding-top:8px;margin-bottom:16px}
 [data-theme="light"] .brief>p,[data-theme="light"] .concept-box p{color:#51475f}
 [data-theme="light"] .concept-box{background:#f4effb;border-color:#7954b0}
 [data-theme="light"] .concept-box strong{color:#60409c}
-[data-theme="light"] #commands button{background:#eee8f6;color:#514163}
+[data-theme="light"] .command-list button{background:#eee8f6;color:#514163}
 [data-theme="light"] dialog{color:#292333}[data-theme="light"] dialog pre{color:#51475f}
 [data-theme="light"] .terminal{background:#fff;border-color:#b5a9c7}
 [data-theme="light"] .terminal-bar{background:#ebe6f1;color:#60566b}

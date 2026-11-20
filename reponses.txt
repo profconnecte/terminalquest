@@ -1,4 +1,6 @@
-Défi	Commande
+Défi	Commande(s)
+Plusieurs commandes : les saisir séparément, dans l'ordre indiqué par →. Les PID correspondent au parcours standard ; utiliser ceux affichés par le terminal si nécessaire.
+
 1 · Se repérer	pwd
 2 · Explorer le serveur	ls
 3 · Lire le mode d’emploi	man ls
@@ -35,3 +37,37 @@ Défi	Commande
 34 · Supprimer un dossier vide	rm -d assets/images/
 35 · Nettoyer une sauvegarde	rm -r backup/
 36 · Dernier contrôle	ls -la /home/etudiant/tournoi/finale/
+37 · Vérifier l’identité de la régie	whoami → id
+38 · Vérifier la protection des comptes	cat /etc/shadow (Résultat attendu : permission non accordée.)
+39 · Contrôler les autorisations de la régie	sudo -l
+40 · Identifier le compte système	id root
+41 · Créer le compte vidéo	sudo adduser alice → id alice
+42 · Lire la fiche du compte	cat /etc/passwd (ou grep "alice" /etc/passwd, grep "alice:" /etc/passwd, grep "^alice:" /etc/passwd)
+43 · Vérifier le mot de passe de test	sudo adduser bob → sudo passwd bob → sudo cat /etc/shadow (ou sudo grep "bob" /etc/shadow, sudo grep "bob:" /etc/shadow, sudo grep "^bob:" /etc/shadow)
+44 · Créer le groupe de la régie	sudo groupadd regie → getent group regie
+45 · Rattacher la cadreuse à la régie	sudo usermod -aG regie alice → id alice
+46 · Attribuer le dossier des équipements	sudo mkdir /srv/regie → sudo chown root:regie /srv/regie → ls -ld /srv/regie
+47 · Réserver le dossier à la régie	sudo chmod 770 /srv/regie
+48 · Tester l’accès d’Alice	sudo -u alice touch /srv/regie/test-video.txt
+49 · Tester le refus hors du groupe	sudo -u nobody touch /srv/regie/test-externe.txt (Résultat attendu : permission non accordée.)
+50 · Inventorier les processus	ps aux
+51 · Lancer un essai en arrière-plan	sleep 90 &
+52 · Terminer le processus de répétition	pgrep -x sleep → kill 2401
+53 · Vérifier l’accès distant	systemctl status ssh
+54 · Préparer le service d’export	sudo systemctl start nexus-export → sudo systemctl enable nexus-export
+55 · Lire les derniers événements	journalctl -n 6
+56 · Filtrer le journal du direct	journalctl -b -u nexus-export
+57 · Préparer l’espace de support	sudo adduser technicien1 → sudo adduser technicien2 → sudo groupadd support → sudo usermod -aG support technicien1 → sudo usermod -aG support technicien2 → sudo mkdir /srv/support → sudo chown root:support /srv/support → sudo chmod 2770 /srv/support → ls -ld /srv/support → sudo -u technicien1 touch /srv/support/test.txt → sudo -u technicien1 chmod g+w /srv/support/test.txt → sudo -u technicien2 touch /srv/support/test.txt → sudo -u nobody ls /srv/support (La dernière commande doit signaler un refus d’accès.)
+58 · Repérer les dossiers personnels	ls /home
+59 · Repérer la configuration système	ls /etc
+60 · Vérifier sa session de régie	whoami → pwd
+61 · Préparer les dossiers des replays	mkdir -p replays/bruts replays/valides exports
+62 · Rejoindre les exports	cd replays/bruts → cd ../../exports
+63 · Vérifier le début des essais	head -n 8 /var/log/nexus/stream.log
+64 · Examiner les dernières entrées	tail -n 12 /var/log/nexus/stream.log
+65 · Repérer les pertes de signal	grep "signal perdu" /var/log/nexus/stream.log
+66 · Lancer le test de secours	sleep 45 &
+67 · Localiser le test de secours	pgrep -x sleep
+68 · Arrêter le test de secours	kill 2402
+69 · Relancer les exports	sudo systemctl restart nexus-export
+70 · Diagnostiquer la panne d’archivage	systemctl status nexus-archive → journalctl -u nexus-archive (Le service est en échec. Le journal indique que /var/lib/nexus/archives est introuvable.)
