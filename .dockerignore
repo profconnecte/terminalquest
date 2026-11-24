@@ -1,0 +1,12 @@
+*
+!Dockerfile
+!server.cjs
+!index.html
+!app.js
+!curriculum.js
+!administration.js
+!administration-shell.js
+!shell.js
+!guidance.js
+!style.css
+!terminal.css
