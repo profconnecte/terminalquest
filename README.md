@@ -2,6 +2,23 @@
 
 Application pédagogique en français, sans installation de dépendances. Ouvrir `index.html` ou lancer `node server.cjs` puis visiter http://127.0.0.1:8080. Avec Laragon, le dossier peut également être servi directement.
 
+## Déploiement Docker
+
+Le workflow GitHub Actions publie `ghcr.io/profconnecte/terminalquest:latest` à chaque modification de `main`, ainsi que des images identifiées par SHA et par tag Git `v*`. Une première publication GHCR est privée par défaut. Si le paquet existe déjà, vérifier sa visibilité dans ses paramètres GitHub et la régler sur **Private** si nécessaire ; le workflow ne modifie pas la visibilité d'un paquet existant.
+
+Sur l'hôte Docker, placer `compose.yaml` dans `/opt/terminalquest`. Pour une image privée, s'authentifier avec un compte ayant accès au paquet et un jeton GitHub classique doté de `read:packages` :
+
+```sh
+docker login ghcr.io -u VOTRE_IDENTIFIANT
+cd /opt/terminalquest
+docker compose pull
+docker compose up -d
+```
+
+Le mot de passe demandé par Docker est le jeton GitHub. Avec Dockhand, utiliser ce fichier Compose comme stack et configurer l'accès au registre privé GHCR avec les mêmes identifiants. L'application est ensuite accessible sur `http://ADRESSE_DU_SERVEUR:8004`. Pour une mise à jour, relancer `docker compose pull` puis `docker compose up -d`.
+
+Le fichier Compose reste sur l'hôte dans `/opt/terminalquest` ; l'application ne produit actuellement aucun fichier persistant côté serveur et ne nécessite donc pas de volume. La progression, les fichiers simulés et le thème restent dans le stockage local de chaque navigateur, liés à l'adresse utilisée : ils ne sont pas sauvegardés dans `/opt/terminalquest` et ne sont pas partagés entre appareils ou navigateurs.
+
 36 défis dans les coulisses du tournoi d’e-sport fictif Nexus Invitational couvrent man, pwd, ls, cd, cat, mkdir, touch, echo, cp, mv et rm. Chaque défi explique une notion et valide une action réelle dans le système de fichiers virtuel. Progression séquentielle, messages du staff, deux niveaux d’aide sans solution complète, historique et complétion. La progression et les fichiers sont sauvegardés localement dans le navigateur. Ce parcours utilise une sauvegarde distincte de l’ancienne version à onze missions.
 
 Après les 36 défis, 34 missions d’administration prolongent le scénario Nexus. Laura et Noah confient des tâches sur les comptes, les groupes, les permissions, les processus, les services et les journaux du serveur fictif. Les missions se valident dans le même terminal, parfois en plusieurs commandes. Le fichier `reponses.txt` donne les commandes attendues pour les 70 missions.
